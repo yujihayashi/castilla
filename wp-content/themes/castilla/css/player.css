@@ -1,0 +1,17 @@
+.transport-MI {position: relative;padding: 0 31px;}
+.transport-MI > div {width: 21px;height: 21px;float: left;background: no-repeat left top;overflow: hidden;text-indent:-1000px;position: relative;background-color: transparent !important;cursor: pointer;}
+.transport-MI > div + div {margin-left: 10px;}
+.transport-MI > div.buttons_mp3j {background-image: url(../images/player/play.png);}
+.transport-MI > div.buttons_mp3j:hover {background-image: url(../images/player/play-active.png);}
+.transport-MI > div.buttons_mp3jpause {background-image: url(../images/player/pause.png);}
+.transport-MI > div.buttons_mp3jpause:hover {background-image: url(../images/player/pause-active.png);}
+.transport-MI > div.stop_mp3j {background-image: url(../images/player/stop.png);}
+.transport-MI > div.stop_mp3j:hover {background-image: url(../images/player/stop-active.png);}
+.transport-MI > div.Next_mp3j {position:absolute;top:0;right:0;background-image: url(../images/player/next.png);}
+.transport-MI > div.Next_mp3j:hover {background-image: url(../images/player/next-active.png);}
+.transport-MI > div.Prev_mp3j {position:absolute;top:0;left:0;background-image: url(../images/player/prev.png);margin-left:0;}
+.transport-MI > div.Prev_mp3j:hover {background-image: url(../images/player/prev-active.png);}
+.playlist-toggle-MI, .MI-image, .player-track-title, .MIsliderVolume, .bars_holder, .jp-play-time, .jp-total-time, .statusMI, .listwrap_mp3j {display: none;}
+.jp-interface:before, .jp-interface:after {display:table; content:" ";}
+.jp-interface:after {clear:both;}
+.wrap-MI  {padding:14px !important;}
