@@ -1,6 +1,6 @@
-@primary-color: #ed3237; 
-@secondary-color: #a7da35; 
-@third-color: #5c5c5c;  
+@primary-color: #a70c11; 
+@secondary-color: #ed1e24; 
+@third-color: #fff700;  // amarelo
 /*
 Theme Name: Castilla
 Author: Agência 1to1
@@ -40,24 +40,152 @@ FUNÇÕES PADRÕES END
 ::-moz-selection {background-color: @primary-color;color: #FFF;}
 small {display: inline-block;line-height: 1.1;}
 textarea {resize:vertical;}
-a {transition: all 0.25s ease 0s;}
+a, button {transition: all 0.25s ease 0s;}
 label {font-weight: normal;}
 body {font-size: 16.5px;}
 /*
 FONTS START
 **********************************************************************************************/
-.btn {font-family: 'ralewayheavy', Arial, sans-serif;font-weight: normal;}
-.page-modalidades .title, .page-modalidades .desc {font-family: 'akzidenz-grotesk_nextXLtIt', Arial, sans-serif;font-weight: normal;}
-.box-social .box-header, .box-modalidades .plus, .box-chamadas, .box-chamadas .media-heading, .navbar {font-family: 'akzidenz-grotesk_nextMdIt', Arial, sans-serif;font-weight: normal;}
-.box-modalidades {font-family: 'akzidenz-grotesk_next_regulRg', Arial, sans-serif;font-weight: normal;}
-.box-modalidades .media-heading {font-family: 'akzidenz-grotesk_bq_superRg', Arial, sans-serif;font-weight: normal;}
+.navbar, .breadcrumb {font-family: 'candararegular', Arial, sans-serif;font-weight: normal;}
+.site-direitos .left {font-family: 'alleritalic', Arial, sans-serif;font-weight: normal;}
+.chamada .title, .btn-sm, .site-direitos .right {font-family: 'allerbold', Arial, sans-serif;font-weight: normal;}
+.pagination, .home-escolher .page-content, .home-escolher .page-content h1, .home-escolher .page-content h2, .home-escolher .page-content h3 {font-family: 'aller_lightregular', Arial, sans-serif;font-weight: normal;}
+.box-depoimento {font-family: 'aller_lightitalic', Arial, sans-serif;font-weight: normal;}
 /**********************************************************************************************
 FONTS END
 */
 /*
 ESTRUTURA START
 **********************************************************************************************/
-
+.navbar-inverse {
+    border:0;margin:0;
+    .navbar-social {
+        padding:8px 0;margin-left: 15px;
+        li {
+            a {
+                display: block;width: 25px;height: 25px;text-align: center;line-height: 25px;color: @primary-color;background: @secondary-color;padding:0;.border-radius(50px);
+                &:hover {background: @secondary-color;}
+            }
+            + li {margin-left: 4px;}
+        }
+    }
+    .navbar-sublinks {
+        font-size: 13px;text-transform: uppercase;padding:4px 0;
+        > li {
+            a {color: #FFF;padding:1.5px 8px;}
+            + li {border-left: 1px solid #FFF;}
+        }
+    }
+    .dropdown-menu {
+        font-size: 13px;
+        > li {
+            a {color: @primary-color;}
+        }
+    }
+}
+.navbar-default {
+    border:0;margin:0;text-transform: uppercase;
+    .navbar-nav {
+        font-size: 19px;
+        > li {
+            > a {padding:5.5px 8px;}
+        }
+    }
+}
+.navbar-brand {
+    padding:32px 22px 30px;height: 126px;
+}
+.navbar-form .content, .navbar-form .form-control, .navbar-form .btn, .navbar-form .form-group, .site-header .btn-aluno {height: 22px;}
+.navbar-form {
+    display: inline-block;padding:0;
+    .content {background: #bbb9b9;.border-radius(50px);padding:0 5px 0 10px;position: relative;z-index: 2;vertical-align: top;display: inline-block;}
+    .form-control {
+        box-shadow:none;line-height: 1;padding:0;font-size: 16px;display: block;
+        &, &:focus, &:active {background: none;border:0;}
+    }
+    .form-group {display: inline-block;vertical-align: top;}
+    .btn {
+        transition:all 0.25s ease 0s;padding:0;font-size: 14px;
+        &, &:focus, &:active, &:hover {background: none;border:0;}
+        &:hover {color: #FFF;}
+    }
+}
+.site-header {
+    .line-2 {
+        .left, .right {float: left;}
+        .left {width: 272px;}
+        .right {
+            width: 668px;
+            .right-1 {padding:20px 0 5px;}
+            .right-2 {text-align: right;}
+        }
+    }
+    .btn-aluno {
+        .border-radius(50px 0 0 50px);font-size: 18px;padding:2px 20px 0 12px;line-height: 1;position: relative;z-index: 1;border:0;vertical-align: top;display: inline-block;
+        + .navbar-form {margin-left: -14px;}
+    }
+}
+.site-breadcrumb {
+    background: #373737;
+    .breadcrumb {
+        padding:3px 0;margin:0;border:0;font-size: 19px;
+        > li {
+            + li {
+                &:before {content:"> ";}
+            }
+        }
+        &, a {color: @third-color;}
+    }
+}
+.site-footer {
+    background: #373737;padding:30px 0 14px;
+}
+.footer-header {
+    text-transform: uppercase;color: @third-color;font-size: 17px;
+    &:hover {color: darken(@third-color, 15%);}
+}
+.icone-footer {margin-bottom: 5px;}
+.logo-footer {margin:86px 0;}
+.menu-footer {
+    text-align: center;
+    > li {
+        a {display: block;}
+    }
+    ul {
+        font-size: 13px;
+        > li {
+            a {color: #FFF;padding:3px 0;}
+        }
+    }
+}
+.site-contato {
+    .right {padding-top:10px;padding-left:50px;}
+    .text {font-size: 17px;}
+    .icone-ligue {margin:0 0 -30px;}
+    .telefone {
+        font-size: 35px;color: #000;margin:0;
+        small {font-size: 27px;}
+    }
+}
+.site-social {
+    background: @primary-color;padding:12px 0;
+    .navbar-social {
+        width: 100%;text-align: center;
+        > li {
+            display: inline-block;float: none;
+            a {
+                background: @third-color;color: @primary-color;.border-radius(50px);width: 36px;height: 36px;padding:0;line-height: 36px;text-align: center;
+                &:hover {background: darken(@third-color, 15%);}
+            }
+        }
+    }
+}
+.site-direitos {
+    font-size: 13px;padding:15px 0;
+    a {color: #000;}
+    .left {color: #000;padding-top: 15px;padding-bottom:15px;}
+    .right {text-align: right;}
+}
 /**********************************************************************************************
 ESTRUTURA END 
 */
@@ -68,15 +196,219 @@ CLASSES START
 .alignleft {margin-right: 18px;margin-bottom: 10px;float: left;}
 .alignright {margin-left: 18px;margin-bottom: 10px;float: right;}
 .aligncenter {display: block;margin:0 auto;}
+.btn-sm {height: 28px;padding:0 25px;line-height: .5;font-size: 15px;}
+.btn-primary {
+    color: @third-color;
+    &:hover {color: darken(@third-color, 15%);}
+}
+.btn-pink {
+    background:#6e585d;color: #ffe1e8;
+    &:hover {background:darken(#6e585d, 15%);color: darken(#ffe1e8, 15%);}
+}
+.btn-white {
+    background:#FFF;color: #61d6ec;
+    &:hover {background:darken(#FFF, 15%);color: darken(#61d6ec, 15%);}
+}
+.btn-yellow {
+    background:#806705;color: #ffcc00;
+    &:hover {background:darken(#806705, 15%);color: darken(#ffcc00, 15%);}
+}
+.btn-black {
+    background:#333333;color: #808080;
+    &:hover {background:darken(#333333, 15%);color: darken(#808080, 15%);}
+}
+.btn-topo {
+    display: block;color: @third-color;font-size: 15px;text-align: right;margin:10px 0;
+    &:hover {color: darken(@third-color, 15%);text-decoration: none;}
+    > * {vertical-align: middle;}
+    .text {display: inline-block;}
+    .fa {font-size: 30px;margin-left: 5px;}
+}
+.btn-strip {background-image:url(img/bg-strip.jpg);background-repeat: repeat;background-position: center;color: @third-color;font-size: 18px;text-transform: uppercase;}
+.box-depoimento {
+    font-size: 16px;background: #ffcc00;.border-radius(150px);overflow: hidden;line-height: 1.2;
+    &, a {color: #2a5f7e;}
+    .imagem {.border-radius(150px);overflow: hidden;padding:0;margin-right: 15px;width: 125px;height: 125px;background:no-repeat center;background-size: cover;}
+    .media-body {padding:15px 25px 15px 0;}
+}
+.box-imagem {
+    background: no-repeat center;background-size: cover;height: 584px;position: relative;
+}
+.blog-date {
+    background: @primary-color;color: #FFF;font-size: 24px;text-align: center;width: 71px;padding:15px 0;line-height: .9;text-transform: uppercase;
+    &, & {display: block;}
+    .day {font-size: 30px;}
+}
+.blog-imagem {
+    // background: no-repeat center;background-size: cover;height: 414px;position: relative;
+    // .img-responsive, img {width: 100%;}
+}
 
+.cycle-nav {
+    span {display: inline-block;cursor: pointer;}
+}
+
+.entry-content {padding:30px 0;}
 .entry-content:before, .entry-content:after {display: table;content: " ";}
 .entry-content:after {clear: both;}
 
+.form-control {box-shadow:none;}
+
+.home-banner {
+    position: relative;
+    &, .cycle-slideshow, .cycle-slideshow li, .cycle-slideshow .content {height: 612px;width: 100%;}
+    .cycle-slideshow {
+        position: relative;z-index: 1;
+        li {
+            .content {background:no-repeat center;background-size: cover;}
+        }
+    }
+    .cycle-prev, .cycle-next {
+        position: absolute;z-index: 2;top: 50%;font-size: 72px;color: @third-color;text-shadow:5px 5px 5px rgba(0, 0, 0, .4);
+        &:hover {color: lighten(@third-color, 50%);}
+    }
+    .cycle-prev {left: 40px;}
+    .cycle-next {right: 40px;}
+    .cycle-nav {
+        position: absolute;left: 0;right: 0;bottom: 0;text-align: center;z-index: 3;padding:22px 0;
+        span {
+            text-indent: -1000px;overflow: hidden;display: inline-block;width: 82px;height: 8px;background: @third-color;margin:0 5px;
+            &.cycle-pager-active {background: #FFF;}
+        }
+    }
+}
+.home-teste {
+    .page-content {
+        background:no-repeat center;background-size: cover;height: 584px;
+    }
+}
+.home-escolher {
+    .page-content {
+        background: url(img/bg-escolher.jpg) no-repeat top center;background-size: cover;font-size: 26px;padding:30px 0;
+        ul {list-style: url(img/list.png);}
+        &, a {color: #FFF;}
+        h2 {font-size: 42px;}
+        h3 {font-size: 34px;}
+    }
+}
+.home-metodologia {
+    .page-content {
+        background:no-repeat center;background-size: cover;height: 298px;
+    }
+}
+.home-aula {
+    .page-content {
+        background: #85b39d;
+        > .container {background: url(img/bg-aula-objeto.gif) no-repeat left bottom;padding-top:44px;padding-bottom: 44px;}
+    }
+}
+.home-matricula {
+    .page-content {
+        background: #5ca0a0 url(img/bg-matricula.jpg) repeat-x top;
+        > .container {background: url(img/bg-matricula-objeto.jpg) no-repeat left top;padding-top:44px;padding-bottom: 44px;}
+    }
+}
+.home-chamadas {
+    .page-content {padding-top:78px;padding-bottom: 78px;}
+    .row {margin:0 -20px;}
+    .chamada {
+        color: @third-color;text-align: center;display: block;
+        .content {
+            background: url(img/bg-strip.jpg) repeat center;padding:30px 15px;margin:0 10px;
+            &, > span {display: block;transition:all 0.25s ease 0s;}
+        }
+        .imagem {font-size: 90px;line-height: 1;}
+        .title {font-size: 26px;line-height: 1;}
+        &:hover {
+            text-decoration: none;
+            .imagem {color: #FFF;}
+        }
+    }
+}
+.home-marketing {
+    background: #113754;
+    .page-content {
+        > .container {padding-top:24px;padding-bottom:24px;background: url(img/bg-marketing.jpg) no-repeat right center;}
+    }
+}
+.home-blog {
+    .page-title {text-align: center;color: #000;}
+}
 
 .inline-block {display:inline-block;}
-[class^='ycon-'], [class*='ycon-'] {background-repeat:no-repeat;vertical-align:middle;display:inline-block;background-image:url(images/ycon.png);}
+[class^='ycon-'], [class*='ycon-'] {background-repeat:no-repeat;vertical-align:middle;display:inline-block;background-image:url(img/ycon.png);}
 
+.lista-blog {
+    .date, .imagem, .text {float: left;display: block;}
+    .date {
+        text-align: center;width: 80px;height: 80px;background: @third-color;border:7px solid @primary-color;font-size: 22px;text-transform: uppercase;line-height: 1;padding:8px 0;
+        span {display: block;}
+    }
+    .imagem {width: 235px;height: 170px;background:no-repeat center;background-size: cover;margin:-45px 0 0;}
+    .text {
+        height: 80px;width: 625px;background: @primary-color;padding:15px 45px;
+        &, a {color: #FFF;}
+        .title {font-size: 22px;display: inline-block;vertical-align: middle;max-width: 96%;line-height: 1;}
+    }
+    > li {
+        padding:45px 0 0;margin-bottom: 10px;
+        &.sem-imagem {
+            .text {width: 860px;}
+        }
+    }
+}
+.lista-videos {
+    margin:0 -3%;
+    > li {margin:0 3% 30px;float: left;width: 44%;}
+}
+.lista-fotos {
+    margin:0 -3%;
+    > li {margin:0 3% 30px;float: left;width: 44%;text-align: center;}
+    .imagem {display: block;background:no-repeat center;background-size: cover;height: 296px;}
+    .title {font-size: 12px;display: block;padding:4px 0;}
+}
+
+
+.outros-posts {
+    .page-title {color: #000;text-align: center;}
+}
+.page-header {
+    background: url(img/bg-strip.jpg) repeat center;text-transform: uppercase;text-align: center;border:0;padding:0;margin:0;
+    h1, .h1, h2, .h2, h3, .h3 {padding:20px 0;margin:0;}
+    &, a {color: #FFF;}
+    .text-warning {
+        a {color: @third-color;}
+    }
+    small {color: #FFF;display: block;text-transform: none;}
+}
+.pagination {
+    width: 100%;text-align: center;
+    > li {
+        display: inline-block;
+        a, span {border:0;}
+    }
+    .current {font-weight: bold;color: #999;}
+}
+.page-contato {
+    background: #e3c6cd;
+    > .container {padding-top:42px;padding-bottom: 42px;background: url(img/bg-contato.jpg) no-repeat left bottom;}
+}
+.page-aula {
+    background: #808080;
+    > .container {padding-top:42px;padding-bottom: 42px;background: url(img/bg-aula.jpg) no-repeat left bottom;}
+}
+.page-matricula {
+    background: #ffcc00;
+    > .container {padding-top:42px;padding-bottom: 42px;background: url(img/bg-matricula-objeto-interna.jpg) no-repeat left bottom;}
+}
+.page-franqueados {
+    .franqueados-content {
+        background: #61d6ec url(img/bg-franqueados-interna.jpg) no-repeat center;background-size: cover;
+        > .container {padding-top:20px;padding-bottom: 42px;}
+    }
+}
 .pixel {width: 100%;height: 100%;}
+.post {padding:30px 0;}
 .space {width:1%;display:inline-block;height:100%;vertical-align:middle;}
 .relative {position: relative;}
 .subcategorias {
@@ -85,8 +417,18 @@ CLASSES START
         display: inline-block;padding:0px 10px;color: #FFF;
         + a {border-left: 1px solid #FFF;}
     } 
-
 }
+
+.single {
+    .entry-title {
+        height: 71px;margin:0;
+        .text {display: inline-block;vertical-align: middle;max-width: 96%;}
+    }
+}
+
+.text-warning {color: @third-color;}
+
+.video-destaque {background: #373737;padding:30px 0;}
 /**********************************************************************************************
 CLASSES END
 */
@@ -101,169 +443,133 @@ JQUERY UI END
 
 }
 @media (max-width: 981px) {
-    .mp3jplayerwidget {display: none;}
-    img {height: auto !important;}
-    .extra-header {
-        .site-header {
-            .navbar-brand {
-                padding:24px 10px;
-                img {width: 180px;}
-            }
-            .navbar-nav {
-                font-size: 13px;
-                > li {
-                    > a {padding:29.5px 7px;}
-                    .icone {display: none;}
-                }
+    .site-direitos, .site-contato {
+        * {text-align: center !important;}
+    }
+    .menu-footer {
+        > li {margin-bottom: 30px;}
+    }
+
+    .home-banner {
+        &, .cycle-slideshow, .cycle-slideshow li, .cycle-slideshow .content {height: 412px;}
+    }
+    .home-escolher {
+        .page-content {
+            font-size: 18px;
+            h2 {font-size: 30px;}
+            h3 {font-size: 24px;}
+        }
+    }
+    .home-chamadas {
+        .chamada {
+            margin-bottom: 30px;
+            .imagem {font-size: 40px;}
+            .title {font-size: 18px;}
+        }
+    }
+    .logo-footer {margin:15px 0;}
+    .btn-topo {text-align: center;}
+    .home-teste {
+        .page-content {height: 540px;}
+    }
+    .home-metodologia {
+        .page-content {height: 240px;}
+    }
+    .lista-blog {
+        .text {width: 405px;}
+        > li {
+            &.sem-imagem {
+                .text {width: 640px;}
             }
         }
     }
-    .tags {
-        position: relative;padding: 15px 10px;width: 100%;
-        > li {
-         padding:0;clear: none;
-         + li {margin-left: 10px;}
-         img {position: relative;}
-     }
- }
- .box-chamadas {
-    > div {margin-bottom: 20px;}
-}
+    .box-imagem {height: 450px;}
+    .lista-fotos {
+        .imagem {height: 220px;}
+    }
 }
 @media (max-width: 767px) {
-   /*    .site-geral:before {content:"TABLET";}*/
-   .box-modalidades {
-    .box-cycle, .cycle-slideshow {width: 100%;}
-    .box-cycle {
-        padding-left:46px;padding-right: 46px;
-    }
-    .cycle-prev {left: 0;}
-    .cycle-next {right: 0;}
-}
-.extra-header {
-    .site-header {
-        .navbar-brand {
-            padding:24px 10px;
-            img {width: 180px;}
-        }
-        .navbar-nav {
-            font-size: 16px;margin-top:0;
-            > li {
-                > a {padding:10px 15px;}
-                .icone {display: none;}
-            }
+
+    .home-banner {
+        &, .cycle-slideshow, .cycle-slideshow li, .cycle-slideshow .content {height: 312px;}
+        .cycle-prev, .cycle-next {font-size: 32px;margin-top: -15px;}
+        .cycle-prev {left: 5px;}
+        .cycle-next {right: 5px;}
+        .cycle-nav {
+            span {width: 40px;}
         }
     }
-}
-.navbar-form {
-    border:0;box-shadow:none;
-    .button {top:8px !important;}
-}
-.box-tabs {
-    .nav-tabs {
-        font-size: 12px;
+    .home-teste {
+        .page-content {height: 360px;}
+    }
+    .home-metodologia {
+        .page-content {height: 200px;}
+    }
+    .site-contato {
+        .right {padding-left: 10px;}
+    }
+    .lista-blog {
+        .date {width: 15%;}
+        .imagem {width: 35%;}
+        .text {
+            width: 50%;
+            .title {font-size: 14px;}
+        }
         > li {
-            > a {
-                padding:30px 25px;
+            &.sem-imagem {
+                .text {width: 85%;}
             }
         }
-    } 
-}
-.box-banner {
-    width: 100%;
-    .cycle-slideshow, .cycle-slideshow li {height: auto;}
-    li {
-        img {width: 100%;height: auto;}
     }
-}
-.box-chamadas {
-    > div {margin-bottom: 20px;}
-}
+    .box-imagem {height: 350px;}
+    .lista-videos {
+        margin:0 0;
+        > li {margin:0 0 30px;float: none;width: 100%;}
+    }
+    .lista-fotos {
+        margin:0 0;
+        > li {margin:0 0 30px;float: none;width: 100%;}
+        .imagem {height: 250px;}
+    }
 }
 @media (max-width: 480px) {
-   /*#GERAL:before {content:"MOBILE";}*/
-   .box-modalidades {
-    .box-cycle, .cycle-slideshow, .cycle-slideshow li {height: 290px;}
-    .cycle-slideshow li {width: 200px;}
-    .box-cycle {
-        img {width: 100%;height:auto;}
+    .navbar-brand {
+        width: 100%;float: none;
+        img {max-width: 100%;}
     }
-    .media {
-        > .pull-left {display: block;float: none !important;}
-        .media-body {padding-top:10px;}
+    .home-banner {
+        &, .cycle-slideshow, .cycle-slideshow li, .cycle-slideshow .content {height: 212px;}
+        .cycle-prev, .cycle-next {font-size: 32px;margin-top: -15px;}
     }
-}
-    .media {
-        > .pull-left {display: block;float: none !important;}
-        .media-body {padding-top:10px;}
+    .lista-blog {
+        .date {font-size: 18px;padding-top:15px;}
     }
-.extra-header {
-    .site-header {
-       .header-social {display: none;}
-   }
-}
-.box-tabs {
-    .nav-tabs {
-        font-size: 10px;
-        > li {
-            > a {
-                padding:15px 8px;
-            }
-        }
-    } 
-}
-.page-modalidades {
-    padding:0 44px;
-    .cycle-prev, .cycle-next {width: 44px;}
-    .cycle-slideshow {
-        li {width: 230px;}
+    .home-teste {
+        .page-content {height: 250px;}
+    }
+    .home-metodologia {
+        .page-content {height: 150px;}
+    }
+    .box-imagem {height: 200px;}
+    .lista-fotos {
+        .imagem {height: 180px;}
     }
 }
+@media (max-width: 354px) {
+    .home-teste {
+        .page-content {height: 160px;}
+    }
+    .home-metodologia {
+        .page-content {height: 100px;}
+    }
+    .box-imagem {height: 150px;}
+    .lista-fotos {
+        .imagem {height: 120px;}
+    }
 }
 @media (min-width: 768px) and (max-width: 980px) {
-    .box-banner {
-        width: 100%;
-        .cycle-slideshow, .cycle-slideshow li {height: auto;}
-        li {
-            img {width: 100%;height: auto;}
-        }
-    }
-    .box-modalidades {
-        .box-cycle, .cycle-slideshow {width: 100%;}
-    }
-    .box-tabs {
-        .nav-tabs {
-            > li {
-                > a {
-                    padding:30px 30px;
-                }
-            }
-        } 
-    }
+
 }
 @media (min-width: 981px) and (max-width: 1200px) {
-    .box-tabs {
-        .nav-tabs {
-            > li {
-                > a {
-                    padding:30px 30px;
-                }
-            }
-        } 
-    }
-    .extra-header {
-        .site-header {
-            .navbar-brand {
-                padding:24px 10px;
-                img {width: 180px;}
-            }
-            .navbar-nav {
-                font-size: 15px;
-                > li {
-                    > a {padding:29.5px 7px;}
-                    .icone {margin-left:4px;}
-                }
-            }
-        }
-    }
+
 }
