@@ -13,18 +13,28 @@ get_header(); ?>
 <div class="page-header">
 	<div class="container">
 		<?
-		$terms = get_the_terms( $post->ID, 'category' );
-		$term = array_pop($terms);
-		?>
-		<h1 class="text-warning"><a href="<?php echo get_term_link($term->slug, 'category'); ?>" class=""><?= $term->name; ?></a></h1>
-	</div>
-</div>
-<div class="container">
-	<div class="row">
-		<div class="col-md-12">
-			<?php
+		if (is_attachment()) {
+			?>
+			<h1 class="text-warning"><? the_title(); ?></h1>
+			<?
+		} //if (!is_attachment()) {
+			else {
+
+				$terms = get_the_terms( $post->ID, 'category' );
+				// print_r($terms);
+				$term = array_pop($terms);
+				?>
+				<h1 class="text-warning"><a href="<?php echo get_term_link($term->slug, 'category'); ?>" class=""><?= $term->name; ?></a></h1>
+				<? } ?>
+
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<?php
 				// Start the Loop.
-			while ( have_posts() ) : the_post();
+					while ( have_posts() ) : the_post();
 
 					/*
 					 * Include the post format-specific template for the content. If you want to

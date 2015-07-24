@@ -471,6 +471,14 @@ CLASSES START
   height: 584px;
   position: relative;
 }
+.box-imagem-full {
+  background: no-repeat center;
+  background-size: cover;
+  position: relative;
+}
+.box-imagem-full img {
+  width: 100%;
+}
 .blog-date {
   background: #a70c11;
   color: #FFF;
@@ -505,6 +513,20 @@ CLASSES START
 }
 .form-control {
   box-shadow: none;
+}
+.galeria-detalhe {
+  overflow: hidden;
+}
+.galeria-detalhe ul {
+  padding: 0;
+  list-style: none;
+}
+.galeria-detalhe .imagem {
+  display: block;
+  width: 100%;
+  background: no-repeat center;
+  background-size: cover;
+  height: 220px;
 }
 .home-banner {
   position: relative;
@@ -794,6 +816,50 @@ CLASSES START
   font-weight: bold;
   color: #999;
 }
+.page-escolha {
+  background: url(img/bg-escolha.jpg) no-repeat center top;
+  background-size: cover;
+}
+.page-escolha,
+.page-escolha > .container {
+  height: 582px;
+}
+.page-escolha > .container {
+  position: relative;
+}
+.page-escolha .idioma {
+  display: block;
+  position: absolute;
+  font-size: 30px;
+  color: #FFF;
+  text-transform: uppercase;
+}
+.page-escolha .idioma-1 {
+  left: 10px;
+  top: 160px;
+}
+.page-escolha .idioma-2 {
+  left: 258px;
+  top: 164px;
+}
+.page-escolha .idioma-3 {
+  left: 500px;
+  top: 134px;
+}
+.page-escolha .idioma-4 {
+  left: 662px;
+  top: 26px;
+}
+.page-escolha .idioma-5 {
+  left: 832px;
+  top: 160px;
+}
+.page-teste-seu-idioma {
+  background: #a8cf45;
+}
+.page-teste-seu-idioma > .container {
+  background: url(img/bg-teste-seu-idioma.jpg) no-repeat left bottom;
+}
 .page-contato {
   background: #e3c6cd;
 }
@@ -935,8 +1001,48 @@ JQUERY UI END
   .lista-fotos .imagem {
     height: 220px;
   }
+  .page-escolha {
+    background: #18587b;
+    padding: 0;
+  }
+  .page-escolha,
+  .page-escolha > .container {
+    height: auto;
+  }
+  .page-escolha > .container {
+    width: 100%;
+    padding: 0;
+  }
+  .page-escolha .idioma {
+    display: block;
+    position: relative;
+    text-align: center;
+    left: inherit;
+    top: inherit;
+    padding: 5px 0;
+    font-size: 20px;
+  }
+  .page-escolha .idioma-1 {
+    background: #a70c11;
+  }
+  .page-escolha .idioma-2 {
+    background: #38944a;
+  }
+  .page-escolha .idioma-3 {
+    background: #1a1a1a;
+  }
+  .page-escolha .idioma-4 {
+    background: #5ca0a0;
+  }
+  .page-escolha .idioma-5 {
+    background: #2e4195;
+  }
 }
 @media (max-width: 767px) {
+  .site-header .line-2 .left,
+  .site-header .line-2 .right {
+    width: 100%;
+  }
   .home-banner,
   .home-banner .cycle-slideshow,
   .home-banner .cycle-slideshow li,
@@ -1002,6 +1108,12 @@ JQUERY UI END
   }
   .lista-fotos .imagem {
     height: 250px;
+  }
+  .galeria-detalhe ul > li {
+    margin-bottom: 20px;
+  }
+  .galeria-detalhe .imagem {
+    height: 320px;
   }
 }
 @media (max-width: 480px) {

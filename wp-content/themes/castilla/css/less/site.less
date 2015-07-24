@@ -234,6 +234,10 @@ CLASSES START
 .box-imagem {
     background: no-repeat center;background-size: cover;height: 584px;position: relative;
 }
+.box-imagem-full {
+    background: no-repeat center;background-size: cover;position: relative;
+    img {width: 100%;}
+}
 .blog-date {
     background: @primary-color;color: #FFF;font-size: 24px;text-align: center;width: 71px;padding:15px 0;line-height: .9;text-transform: uppercase;
     &, & {display: block;}
@@ -253,6 +257,12 @@ CLASSES START
 .entry-content:after {clear: both;}
 
 .form-control {box-shadow:none;}
+
+.galeria-detalhe {
+    overflow: hidden;
+    ul {padding:0;list-style: none;}
+    .imagem {display:block;width: 100%;background: no-repeat center;background-size: cover;height: 220px;}
+}
 
 .home-banner {
     position: relative;
@@ -389,6 +399,23 @@ CLASSES START
     }
     .current {font-weight: bold;color: #999;}
 }
+.page-escolha {
+    background: url(img/bg-escolha.jpg) no-repeat center top;background-size: cover;
+    &, > .container {
+        height: 582px;
+    }
+    > .container {position: relative;}
+    .idioma {display: block;position: absolute;font-size: 30px;color: #FFF;text-transform: uppercase;}
+    .idioma-1 {left: 10px;top: 160px;}
+    .idioma-2 {left: 258px;top: 164px;}
+    .idioma-3 {left: 500px;top: 134px;}
+    .idioma-4 {left: 662px;top: 26px;}
+    .idioma-5 {left: 832px;top: 160px;}
+}
+.page-teste-seu-idioma {
+    background: #a8cf45;
+    > .container {background: url(img/bg-teste-seu-idioma.jpg) no-repeat left bottom;}
+}
 .page-contato {
     background: #e3c6cd;
     > .container {padding-top:42px;padding-bottom: 42px;background: url(img/bg-contato.jpg) no-repeat left bottom;}
@@ -487,9 +514,24 @@ JQUERY UI END
     .lista-fotos {
         .imagem {height: 220px;}
     }
+    .page-escolha {
+        background: #18587b;padding:0;
+        &, > .container {height: auto;}
+        > .container {width: 100%;padding:0;}
+        .idioma {display: block;position: relative;text-align: center;left: inherit;top:inherit;padding:5px 0;font-size: 20px;}
+        .idioma-1 {background: #a70c11;}
+        .idioma-2 {background: #38944a;}
+        .idioma-3 {background: #1a1a1a;}
+        .idioma-4 {background: #5ca0a0;}
+        .idioma-5 {background: #2e4195;}
+    }
 }
 @media (max-width: 767px) {
-
+    .site-header {
+        .line-2 {
+            .left, .right {width: 100%;}
+        }
+    }
     .home-banner {
         &, .cycle-slideshow, .cycle-slideshow li, .cycle-slideshow .content {height: 312px;}
         .cycle-prev, .cycle-next {font-size: 32px;margin-top: -15px;}
@@ -530,6 +572,12 @@ JQUERY UI END
         margin:0 0;
         > li {margin:0 0 30px;float: none;width: 100%;}
         .imagem {height: 250px;}
+    }
+    .galeria-detalhe {
+        ul {
+            > li {margin-bottom: 20px;}
+        }
+        .imagem {height: 320px;}
     }
 }
 @media (max-width: 480px) {

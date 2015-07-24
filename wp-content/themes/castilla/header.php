@@ -83,9 +83,9 @@
 											<ul class="nav navbar-nav">
 												<li><a href="/sobre/">O Castilla</a></li>
 												<li><a href="/category/blog/">Blog</a></li>
-												<li><a href="#">Cursos</a></li>
-												<li><a href="#">Unidades</a></li>
-												<li><a href="#">Teste seu idioma</a></li>
+												<li><a href="/category/cursos/">Cursos</a></li>
+												<li><a href="/category/unidades/">Unidades</a></li>
+												<li><a href="/teste-seu-idioma/">Teste seu idioma</a></li>
 												<li><a href="/contato/">Contato</a></li>
 											</ul>
 										</div> <!-- .right-1 -->
