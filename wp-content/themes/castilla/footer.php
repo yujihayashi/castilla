@@ -25,7 +25,7 @@
 									Se preferir, entre em contato com a gente pelo nosso formulário.
 								</p>
 								<p class="text-right">
-									<a href="#" class="btn btn-primary btn-strip" title="Envie-nos uma mensagem!">Acessar formulário online</a>
+									<a href="/contato/" class="btn btn-primary btn-strip" title="Envie-nos uma mensagem!">Acessar formulário online</a>
 								</p>
 							</div> <!-- .col-md-10 -->
 						</div>

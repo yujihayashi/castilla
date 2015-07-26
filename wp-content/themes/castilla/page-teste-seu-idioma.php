@@ -31,9 +31,11 @@ while ( have_posts() ) : the_post();
 			</header>
 		</div> <!-- .container -->
 	</div> <!-- .page-header -->
+	<? if (get_the_post_thumbnail()) { ?>
 	<div class="box-imagem-full" style="">
-		<img src="<?php echo get_template_directory_uri(); ?>/img/teste.jpg" class="" alt="">
+		<?php echo get_the_post_thumbnail(); ?>
 	</div> <!-- .box-imagem -->
+	<? } //if (get_the_post_thumbnail( $page )) { ?>
 	<div class="page-header">
 		<div class="container">
 			<header class="entry-header">
@@ -45,11 +47,11 @@ while ( have_posts() ) : the_post();
 	</div> <!-- .page-header -->
 	<div class="page-escolha">
 		<div class="container">
-			<a href="#" title="Acesse" class="idioma idioma-1">Inglês</a>
-			<a href="#" title="Acesse" class="idioma idioma-2">Italiano</a>
-			<a href="#" title="Acesse" class="idioma idioma-3">Alemão</a>
-			<a href="#" title="Acesse" class="idioma idioma-4">Espanhol</a>
-			<a href="#" title="Acesse" class="idioma idioma-5">Francês</a>
+			<a href="/teste-seu-idioma/teste-de-ingles/" title="Acesse" class="idioma idioma-1">Inglês</a>
+			<a href="/teste-seu-idioma/teste-de-italiano/" title="Acesse" class="idioma idioma-2">Italiano</a>
+			<a href="/teste-seu-idioma/teste-de-alemao/" title="Acesse" class="idioma idioma-3">Alemão</a>
+			<a href="/teste-seu-idioma/teste-de-espanhol/" title="Acesse" class="idioma idioma-4">Espanhol</a>
+			<a href="/teste-seu-idioma/teste-de-frances/" title="Acesse" class="idioma idioma-5">Francês</a>
 		</div> <!-- .container -->
 	</div> <!-- .page-escolha -->
 	<div class="page-header">
@@ -69,29 +71,6 @@ while ( have_posts() ) : the_post();
 						<?php
 						the_content();
 						?>
-						<form action="">
-							<div class="form-group row">
-								<label class="sr-only">Nome:</label>
-								<div class="col-md-9 col-sm-6">
-									<input type="text" class="form-control input-sm" placeholder="Nome:">
-								</div>
-							</div> <!-- .form-group -->
-							<div class="form-group row">
-								<label class="sr-only">Telefone:</label>
-								<div class="col-md-9 col-sm-6">
-									<input type="text" class="form-control input-sm" placeholder="Telefone:">
-								</div>
-							</div> <!-- .form-group -->
-							<div class="form-group row">
-								<label class="sr-only">E-mail:</label>
-								<div class="col-md-9 col-sm-6">
-									<input type="email" class="form-control input-sm" placeholder="E-mail:">
-								</div>
-								<div class="col-md-3">
-									<button class="btn btn-info btn-sm" type="submit">ENVIAR</button>
-								</div>
-							</div> <!-- .form-group -->
-						</form>
 						<?php
 						wp_link_pages( array(
 							'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'twentyfourteen' ) . '</span>',

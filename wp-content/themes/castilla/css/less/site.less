@@ -57,6 +57,7 @@ FONTS END
 /*
 ESTRUTURA START
 **********************************************************************************************/
+.navbar-toggle {margin-top: 44px;}
 .navbar-inverse {
     border:0;margin:0;
     .navbar-social {
@@ -193,9 +194,23 @@ ESTRUTURA END
 CLASSES START
 **********************************************************************************************/
 [class^='lista-'], [class^='lista-'], [class^='menu-'], [class^='menu-'] ul, .cycle-slideshow {list-style:none;margin-bottom:0;padding-left:0;}
+form {   
+    .ajax-loader {float: left;}
+}
 .alignleft {margin-right: 18px;margin-bottom: 10px;float: left;}
 .alignright {margin-left: 18px;margin-bottom: 10px;float: right;}
 .aligncenter {display: block;margin:0 auto;}
+.aba-unidades {
+    padding:0;margin:0 -20px;list-style:none;
+    > li {
+        font-size:18px;text-align: center;margin-bottom: 30px;
+        a {
+            display: block;background: @secondary-color;color: #FFF;height: 70px;margin:0 10px;padding:2px 5px;line-height: 1;
+            .text {display: inline-block;max-width: 96%;vertical-align: middle;}
+        }
+    }
+}
+
 .btn-sm {height: 28px;padding:0 25px;line-height: .5;font-size: 15px;}
 .btn-primary {
     color: @third-color;
@@ -212,6 +227,14 @@ CLASSES START
 .btn-yellow {
     background:#806705;color: #ffcc00;
     &:hover {background:darken(#806705, 15%);color: darken(#ffcc00, 15%);}
+}
+.btn-green {
+    background:#658144;color: #a8cf45;
+    &:hover {background:darken(#658144, 15%);color: darken(#a8cf45, 15%);}
+}
+.btn-orange {
+    background:#b35207;color: #fa9549;
+    &:hover {background:darken(#b35207, 15%);color: darken(#fa9549, 15%);}
 }
 .btn-black {
     background:#333333;color: #808080;
@@ -236,7 +259,7 @@ CLASSES START
 }
 .box-imagem-full {
     background: no-repeat center;background-size: cover;position: relative;
-    img {width: 100%;}
+    img {width: 100%;height: auto;}
 }
 .blog-date {
     background: @primary-color;color: #FFF;font-size: 24px;text-align: center;width: 71px;padding:15px 0;line-height: .9;text-transform: uppercase;
@@ -266,11 +289,15 @@ CLASSES START
 
 .home-banner {
     position: relative;
-    &, .cycle-slideshow, .cycle-slideshow li, .cycle-slideshow .content {height: 612px;width: 100%;}
+    &, .cycle-slideshow, .cycle-slideshow li, .cycle-slideshow .content {/*height:  612px */;height:auto;width: 100%;}
     .cycle-slideshow {
         position: relative;z-index: 1;
         li {
             .content {background:no-repeat center;background-size: cover;}
+        }
+        li {
+            > a {display: block;}
+            img {width: 100%;}
         }
     }
     .cycle-prev, .cycle-next {
@@ -399,6 +426,15 @@ CLASSES START
     }
     .current {font-weight: bold;color: #999;}
 }
+.page-menu {
+    background: #113754;padding:15px 0;
+    .page-extra {background: url(img/bg-aviao.png) repeat-y center top;padding-top:4px;padding-bottom: 4px;}
+    > .container {}
+    .item {
+        display: block;font-size: 27px;color: #FFF;line-height: 41px;
+        + .item {margin-top:6px;}
+    }
+}
 .page-escolha {
     background: url(img/bg-escolha.jpg) no-repeat center top;background-size: cover;
     &, > .container {
@@ -434,6 +470,29 @@ CLASSES START
         > .container {padding-top:20px;padding-bottom: 42px;}
     }
 }
+.page-cursos {
+    background: #1d6784 url(img/cursos.jpg) no-repeat center top;background-size: cover;
+    > .container {height: 584px;position: relative;}
+    .idioma {display: block;position: absolute;font-size: 32px;color: #FFF;text-transform: uppercase;width: 196px;text-align: center;}
+    .idioma-1 {left: 108px;top: 122px;}
+    .idioma-2 {left: 321px;top: 166px;}
+    .idioma-3 {left: 108px;top: 208px;}
+    .idioma-4 {left: 321px;top: 248px;}
+    .idioma-5 {left: 108px;top: 298px;}
+
+}
+.page-info {
+    background: #fa9549;
+    > .container {background: url(img/bg-info-objeto.jpg) no-repeat left bottom;padding-top:20px;padding-bottom: 42px;}
+}
+.page-filho-metodologia {
+    .entry-content {
+        ul {font-size: 30px;list-style-type: square;color: #000;float: left;width: 44%;margin:0 3%;}
+    }
+}
+.page-mapa {
+    .gmp_map_opts {margin:0 !important;}
+}
 .pixel {width: 100%;height: 100%;}
 .post {padding:30px 0;}
 .space {width:1%;display:inline-block;height:100%;vertical-align:middle;}
@@ -451,6 +510,10 @@ CLASSES START
         height: 71px;margin:0;
         .text {display: inline-block;vertical-align: middle;max-width: 96%;}
     }
+}
+.single-unidade {
+    .box-img {padding:5px;margin-right: 20px;}
+    .imagem {display: block;width: 414px;height: 277px;background:no-repeat center;background-size: cover;}
 }
 
 .text-warning {color: @third-color;}
@@ -478,130 +541,169 @@ JQUERY UI END
     }
 
     .home-banner {
-        &, .cycle-slideshow, .cycle-slideshow li, .cycle-slideshow .content {height: 412px;}
-    }
-    .home-escolher {
-        .page-content {
-            font-size: 18px;
-            h2 {font-size: 30px;}
-            h3 {font-size: 24px;}
-        }
-    }
-    .home-chamadas {
-        .chamada {
-            margin-bottom: 30px;
-            .imagem {font-size: 40px;}
-            .title {font-size: 18px;}
-        }
-    }
-    .logo-footer {margin:15px 0;}
-    .btn-topo {text-align: center;}
-    .home-teste {
-        .page-content {height: 540px;}
-    }
-    .home-metodologia {
-        .page-content {height: 240px;}
-    }
-    .lista-blog {
-        .text {width: 405px;}
-        > li {
-            &.sem-imagem {
-                .text {width: 640px;}
-            }
-        }
-    }
-    .box-imagem {height: 450px;}
-    .lista-fotos {
-        .imagem {height: 220px;}
-    }
-    .page-escolha {
-        background: #18587b;padding:0;
-        &, > .container {height: auto;}
-        > .container {width: 100%;padding:0;}
-        .idioma {display: block;position: relative;text-align: center;left: inherit;top:inherit;padding:5px 0;font-size: 20px;}
-        .idioma-1 {background: #a70c11;}
-        .idioma-2 {background: #38944a;}
-        .idioma-3 {background: #1a1a1a;}
-        .idioma-4 {background: #5ca0a0;}
-        .idioma-5 {background: #2e4195;}
+    &, .cycle-slideshow, .cycle-slideshow li, .cycle-slideshow .content {/*height: 412px;*/}
+}
+.home-escolher {
+    .page-content {
+        font-size: 18px;
+        h2 {font-size: 30px;}
+        h3 {font-size: 24px;}
     }
 }
+.home-chamadas {
+    .chamada {
+        margin-bottom: 30px;
+        .imagem {font-size: 40px;}
+        .title {font-size: 18px;}
+    }
+}
+.logo-footer {margin:15px 0;}
+.btn-topo {text-align: center;}
+.home-teste {
+    .page-content {height: 540px;}
+}
+.home-metodologia {
+    .page-content {height: 240px;}
+}
+.lista-blog {
+    .text {width: 405px;}
+    > li {
+        &.sem-imagem {
+            .text {width: 640px;}
+        }
+    }
+}
+.box-imagem {height: 450px;}
+.lista-fotos {
+    .imagem {height: 220px;}
+}
+.page-escolha, .page-cursos {
+    background: #18587b;padding:0;
+    &, > .container {height: auto;}
+    > .container {width: 100%;padding:0;}
+    .idioma {display: block;position: relative;text-align: center;left: inherit;top:inherit;padding:5px 0;font-size: 20px;width: 100%;}
+    .idioma-1 {background: #a70c11;}
+    .idioma-2 {background: #38944a;}
+    .idioma-3 {background: #1a1a1a;}
+    .idioma-4 {background: #5ca0a0;}
+    .idioma-5 {background: #2e4195;}
+}
+}
 @media (max-width: 767px) {
+    .site-header .btn-aluno {display: block;text-align: left;padding:5.5px 8px;color: @secondary-color;background: none;.border-radius(0);height: auto;margin:0 -10px;}
+    .site-header .navbar-form {text-align: center;display: block;float: none;margin:15px 0;border:0;}
+    .site-header .navbar-form .content {}
+    .home-chamadas .row {margin:0;}
     .site-header {
         .line-2 {
             .left, .right {width: 100%;}
         }
     }
     .home-banner {
-        &, .cycle-slideshow, .cycle-slideshow li, .cycle-slideshow .content {height: 312px;}
-        .cycle-prev, .cycle-next {font-size: 32px;margin-top: -15px;}
-        .cycle-prev {left: 5px;}
-        .cycle-next {right: 5px;}
-        .cycle-nav {
-            span {width: 40px;}
+    &, .cycle-slideshow, .cycle-slideshow li, .cycle-slideshow .content {/*height: 312px;*/}
+    .cycle-prev, .cycle-next {font-size: 32px;margin-top: -15px;}
+    .cycle-prev {left: 5px;}
+    .cycle-next {right: 5px;}
+    .cycle-nav {
+        span {width: 40px;}
+    }
+}
+.home-escolher {
+    .page-content {background-position: right center;}
+}
+.home-aula, .home-matricula, .home-marketing {
+    .page-content {
+        background-image:none;
+        > .container {background-image: none;}
+    }
+}
+.page-contato, .page-info, .page-aula, .page-matricula, .page-teste-seu-idioma {
+    > .container {background-image:none;}
+}
+.home-teste {
+    .page-content {height: 360px;}
+}
+.home-metodologia {
+    .page-content {height: 200px;}
+}
+.site-contato {
+    .right {padding-left: 10px;}
+}
+.lista-blog {
+    .date {width: 15%;}
+    .imagem {width: 35%;}
+    .text {
+        width: 50%;
+        .title {font-size: 14px;}
+    }
+    > li {
+        &.sem-imagem {
+            .text {width: 85%;}
         }
     }
-    .home-teste {
-        .page-content {height: 360px;}
+}
+.box-imagem {height: 350px;}
+.lista-videos {
+    margin:0 0;
+    > li {margin:0 0 30px;float: none;width: 100%;}
+}
+.lista-fotos {
+    margin:0 0;
+    > li {margin:0 0 30px;float: none;width: 100%;}
+    .imagem {height: 250px;}
+}
+.galeria-detalhe {
+    ul {
+        > li {margin-bottom: 20px;}
     }
-    .home-metodologia {
-        .page-content {height: 200px;}
+    .imagem {height: 320px;}
+}
+.single-unidade {
+    .box-img {display: none;}
+}
+.box-depoimento {
+    .border-radius(0);
+    .imagem {.border-radius(0);}
+}
+.page-filho-metodologia {
+    .entry-content {
+        ul {width: 100%;margin:0;float:none;}
     }
-    .site-contato {
-        .right {padding-left: 10px;}
-    }
-    .lista-blog {
-        .date {width: 15%;}
-        .imagem {width: 35%;}
-        .text {
-            width: 50%;
-            .title {font-size: 14px;}
-        }
-        > li {
-            &.sem-imagem {
-                .text {width: 85%;}
-            }
-        }
-    }
-    .box-imagem {height: 350px;}
-    .lista-videos {
-        margin:0 0;
-        > li {margin:0 0 30px;float: none;width: 100%;}
-    }
-    .lista-fotos {
-        margin:0 0;
-        > li {margin:0 0 30px;float: none;width: 100%;}
-        .imagem {height: 250px;}
-    }
-    .galeria-detalhe {
-        ul {
-            > li {margin-bottom: 20px;}
-        }
-        .imagem {height: 320px;}
-    }
+}
 }
 @media (max-width: 480px) {
     .navbar-brand {
-        width: 100%;float: none;
+        width: 80%;float: none;display: block;height: auto;
         img {max-width: 100%;}
     }
     .home-banner {
-        &, .cycle-slideshow, .cycle-slideshow li, .cycle-slideshow .content {height: 212px;}
-        .cycle-prev, .cycle-next {font-size: 32px;margin-top: -15px;}
+    &, .cycle-slideshow, .cycle-slideshow li, .cycle-slideshow .content {/*height: 212px;*/}
+    .cycle-prev, .cycle-next {font-size: 32px;margin-top: -15px;}
+}
+.lista-blog {
+    .date {font-size: 18px;padding-top:15px;font-size: 13px;}
+    .text {
+        padding:15px 15px;
+        .title {font-size: 12px;}
     }
-    .lista-blog {
-        .date {font-size: 18px;padding-top:15px;}
-    }
-    .home-teste {
-        .page-content {height: 250px;}
-    }
-    .home-metodologia {
-        .page-content {height: 150px;}
-    }
-    .box-imagem {height: 200px;}
-    .lista-fotos {
-        .imagem {height: 180px;}
-    }
+    .imagem {height: 80px;margin:0;}
+}
+.home-teste {
+    .page-content {height: 250px;}
+}
+.home-metodologia {
+    .page-content {height: 150px;}
+}
+.box-imagem {height: 200px;}
+.lista-fotos {
+    .imagem {height: 180px;}
+}
+.home-escolher {
+    .page-content {background: #113754 ;}
+}
+.page-header {
+    h1, h2, h3 {font-size: 20px;}
+}
 }
 @media (max-width: 354px) {
     .home-teste {
@@ -614,6 +716,7 @@ JQUERY UI END
     .lista-fotos {
         .imagem {height: 120px;}
     }
+    .box-depoimento {padding:15px;text-align: center;}
 }
 @media (min-width: 768px) and (max-width: 980px) {
 

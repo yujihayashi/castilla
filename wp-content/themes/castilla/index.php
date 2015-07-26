@@ -19,16 +19,23 @@ get_header(); ?>
 	<a href="javascript:void(0);" class="cycle-prev"><span class="fa fa-arrow-circle-o-left"></span></a>
 	<a href="javascript:void(0);" class="cycle-next"><span class="fa fa-arrow-circle-o-right"></span></a>
 	<ul class="cycle-slideshow" data-cycle-fx="scrollHorz" data-cycle-timeout="5000" data-cycle-speed="1800" data-cycle-slides="> li" data-cycle-pager=".home-banner .cycle-nav" data-cycle-next=".home-banner .cycle-next" data-cycle-prev=".home-banner .cycle-prev" data-cycle-easing="easeInOutExpo" data-cycle-log="false" data-cycle-swipe="true">
-		<li>
+		<?php $args = array(
+			'orderby'          => 'rating',
+			'category_name'    => 'banner',
+			'categorize'       => 0,
+			'title_li'         => '',
+			'category_orderby' => 'name',
+			'category_order'   => 'ASC',
+			'class'            => 'linkcat',
+			'category_before'  => '<div>',
+			'show_name'		=> false,
+			'category_after'   => '</div>' ); ?> 
+			<?php wp_list_bookmarks($args); ?>
+		<? /* <li>
 			<div class="content" style="background-image:url(<?php echo get_template_directory_uri(); ?>/img/banner-01.jpg);">
 				<img src="<?php echo get_template_directory_uri(); ?>/img/pixel.gif" alt="pixel" class="pixel">
 			</div> <!-- .content -->
-		</li>
-		<li>
-			<div class="content" style="background-image:url(<?php echo get_template_directory_uri(); ?>/img/banner-01.jpg);">
-				<img src="<?php echo get_template_directory_uri(); ?>/img/pixel.gif" alt="pixel" class="pixel">
-			</div> <!-- .content -->
-		</li>
+		</li> */ ?>
 	</ul>
 	<div class="cycle-nav"></div>
 </div> <!-- .home-banner -->
@@ -42,7 +49,7 @@ get_header(); ?>
 		</div> <!-- .container -->
 	</div> <!-- .page-header -->
 	<div class="page-content" style="background-image:url(<?php echo get_template_directory_uri(); ?>/img/teste-seu-conhecimento.jpg);">
-		<img src="<?php echo get_template_directory_uri(); ?>/img/pixel.gif" alt="pixel" class="pixel">
+		<a href="/teste-seu-conhecimento/"><img src="<?php echo get_template_directory_uri(); ?>/img/pixel.gif" alt="pixel" class="pixel"></a>
 	</div> <!-- .page-content -->
 </div> <!-- .home-teste -->
 <div class="home-escolher">

@@ -13,6 +13,7 @@
 	<meta property="og:image" content="<?php echo get_template_directory_uri(); ?>/img/logo-mini.jpg" />
 	<meta property="og:site_name" content="" />
 	<meta property="og:type" content="website" />
+	<?php wp_head(); ?>
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/library/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/font-awesome.min.css">
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/fonts/stylesheet.css">
@@ -26,7 +27,6 @@
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/library/cycle2/jquery.cycle2.scrollVert.min.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/library/cycle2/jquery.cycle2.carousel.min.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/bootstrap_site.js"></script>
-	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
 	<div class="extra-geral">
@@ -83,7 +83,7 @@
 											<ul class="nav navbar-nav">
 												<li><a href="/sobre/">O Castilla</a></li>
 												<li><a href="/category/blog/">Blog</a></li>
-												<li><a href="/category/cursos/">Cursos</a></li>
+												<li><a href="/cursos/">Cursos</a></li>
 												<li><a href="/category/unidades/">Unidades</a></li>
 												<li><a href="/teste-seu-idioma/">Teste seu idioma</a></li>
 												<li><a href="/contato/">Contato</a></li>

@@ -82,6 +82,9 @@ FONTS END
 /*
 ESTRUTURA START
 **********************************************************************************************/
+.navbar-toggle {
+  margin-top: 44px;
+}
 .navbar-inverse {
   border: 0;
   margin: 0;
@@ -350,6 +353,9 @@ CLASSES START
   margin-bottom: 0;
   padding-left: 0;
 }
+form .ajax-loader {
+  float: left;
+}
 .alignleft {
   margin-right: 18px;
   margin-bottom: 10px;
@@ -363,6 +369,30 @@ CLASSES START
 .aligncenter {
   display: block;
   margin: 0 auto;
+}
+.aba-unidades {
+  padding: 0;
+  margin: 0 -20px;
+  list-style: none;
+}
+.aba-unidades > li {
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.aba-unidades > li a {
+  display: block;
+  background: #ed1e24;
+  color: #FFF;
+  height: 70px;
+  margin: 0 10px;
+  padding: 2px 5px;
+  line-height: 1;
+}
+.aba-unidades > li a .text {
+  display: inline-block;
+  max-width: 96%;
+  vertical-align: middle;
 }
 .btn-sm {
   height: 28px;
@@ -399,6 +429,22 @@ CLASSES START
 .btn-yellow:hover {
   background: #362c02;
   color: #b38f00;
+}
+.btn-green {
+  background: #658144;
+  color: #a8cf45;
+}
+.btn-green:hover {
+  background: #3e4f2a;
+  color: #7d9f29;
+}
+.btn-orange {
+  background: #b35207;
+  color: #fa9549;
+}
+.btn-orange:hover {
+  background: #693004;
+  color: #f06b07;
 }
 .btn-black {
   background: #333333;
@@ -478,6 +524,7 @@ CLASSES START
 }
 .box-imagem-full img {
   width: 100%;
+  height: auto;
 }
 .blog-date {
   background: #a70c11;
@@ -535,7 +582,8 @@ CLASSES START
 .home-banner .cycle-slideshow,
 .home-banner .cycle-slideshow li,
 .home-banner .cycle-slideshow .content {
-  height: 612px;
+  /*height:  612px */
+  height: auto;
   width: 100%;
 }
 .home-banner .cycle-slideshow {
@@ -545,6 +593,12 @@ CLASSES START
 .home-banner .cycle-slideshow li .content {
   background: no-repeat center;
   background-size: cover;
+}
+.home-banner .cycle-slideshow li > a {
+  display: block;
+}
+.home-banner .cycle-slideshow li img {
+  width: 100%;
 }
 .home-banner .cycle-prev,
 .home-banner .cycle-next {
@@ -816,6 +870,24 @@ CLASSES START
   font-weight: bold;
   color: #999;
 }
+.page-menu {
+  background: #113754;
+  padding: 15px 0;
+}
+.page-menu .page-extra {
+  background: url(img/bg-aviao.png) repeat-y center top;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+.page-menu .item {
+  display: block;
+  font-size: 27px;
+  color: #FFF;
+  line-height: 41px;
+}
+.page-menu .item + .item {
+  margin-top: 6px;
+}
 .page-escolha {
   background: url(img/bg-escolha.jpg) no-repeat center top;
   background-size: cover;
@@ -892,6 +964,62 @@ CLASSES START
   padding-top: 20px;
   padding-bottom: 42px;
 }
+.page-cursos {
+  background: #1d6784 url(img/cursos.jpg) no-repeat center top;
+  background-size: cover;
+}
+.page-cursos > .container {
+  height: 584px;
+  position: relative;
+}
+.page-cursos .idioma {
+  display: block;
+  position: absolute;
+  font-size: 32px;
+  color: #FFF;
+  text-transform: uppercase;
+  width: 196px;
+  text-align: center;
+}
+.page-cursos .idioma-1 {
+  left: 108px;
+  top: 122px;
+}
+.page-cursos .idioma-2 {
+  left: 321px;
+  top: 166px;
+}
+.page-cursos .idioma-3 {
+  left: 108px;
+  top: 208px;
+}
+.page-cursos .idioma-4 {
+  left: 321px;
+  top: 248px;
+}
+.page-cursos .idioma-5 {
+  left: 108px;
+  top: 298px;
+}
+.page-info {
+  background: #fa9549;
+}
+.page-info > .container {
+  background: url(img/bg-info-objeto.jpg) no-repeat left bottom;
+  padding-top: 20px;
+  padding-bottom: 42px;
+}
+.page-filho-metodologia .entry-content ul {
+  font-size: 30px;
+  list-style-type: square;
+  color: #000;
+  float: left;
+  width: 44%;
+  margin: 0 3%;
+}
+.page-mapa .gmp_map_opts {
+  margin: 0 !important;
+}
 .pixel {
   width: 100%;
   height: 100%;
@@ -929,6 +1057,17 @@ CLASSES START
   vertical-align: middle;
   max-width: 96%;
 }
+.single-unidade .box-img {
+  padding: 5px;
+  margin-right: 20px;
+}
+.single-unidade .imagem {
+  display: block;
+  width: 414px;
+  height: 277px;
+  background: no-repeat center;
+  background-size: cover;
+}
 .text-warning {
   color: #fff700;
 }
@@ -957,7 +1096,7 @@ JQUERY UI END
   .home-banner .cycle-slideshow,
   .home-banner .cycle-slideshow li,
   .home-banner .cycle-slideshow .content {
-    height: 412px;
+    /*height: 412px;*/
   }
   .home-escolher .page-content {
     font-size: 18px;
@@ -1001,19 +1140,24 @@ JQUERY UI END
   .lista-fotos .imagem {
     height: 220px;
   }
-  .page-escolha {
+  .page-escolha,
+  .page-cursos {
     background: #18587b;
     padding: 0;
   }
   .page-escolha,
-  .page-escolha > .container {
+  .page-cursos,
+  .page-escolha > .container,
+  .page-cursos > .container {
     height: auto;
   }
-  .page-escolha > .container {
+  .page-escolha > .container,
+  .page-cursos > .container {
     width: 100%;
     padding: 0;
   }
-  .page-escolha .idioma {
+  .page-escolha .idioma,
+  .page-cursos .idioma {
     display: block;
     position: relative;
     text-align: center;
@@ -1021,24 +1165,52 @@ JQUERY UI END
     top: inherit;
     padding: 5px 0;
     font-size: 20px;
+    width: 100%;
   }
-  .page-escolha .idioma-1 {
+  .page-escolha .idioma-1,
+  .page-cursos .idioma-1 {
     background: #a70c11;
   }
-  .page-escolha .idioma-2 {
+  .page-escolha .idioma-2,
+  .page-cursos .idioma-2 {
     background: #38944a;
   }
-  .page-escolha .idioma-3 {
+  .page-escolha .idioma-3,
+  .page-cursos .idioma-3 {
     background: #1a1a1a;
   }
-  .page-escolha .idioma-4 {
+  .page-escolha .idioma-4,
+  .page-cursos .idioma-4 {
     background: #5ca0a0;
   }
-  .page-escolha .idioma-5 {
+  .page-escolha .idioma-5,
+  .page-cursos .idioma-5 {
     background: #2e4195;
   }
 }
 @media (max-width: 767px) {
+  .site-header .btn-aluno {
+    display: block;
+    text-align: left;
+    padding: 5.5px 8px;
+    color: #ed1e24;
+    background: none;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    height: auto;
+    margin: 0 -10px;
+  }
+  .site-header .navbar-form {
+    text-align: center;
+    display: block;
+    float: none;
+    margin: 15px 0;
+    border: 0;
+  }
+  .home-chamadas .row {
+    margin: 0;
+  }
   .site-header .line-2 .left,
   .site-header .line-2 .right {
     width: 100%;
@@ -1047,7 +1219,7 @@ JQUERY UI END
   .home-banner .cycle-slideshow,
   .home-banner .cycle-slideshow li,
   .home-banner .cycle-slideshow .content {
-    height: 312px;
+    /*height: 312px;*/
   }
   .home-banner .cycle-prev,
   .home-banner .cycle-next {
@@ -1062,6 +1234,26 @@ JQUERY UI END
   }
   .home-banner .cycle-nav span {
     width: 40px;
+  }
+  .home-escolher .page-content {
+    background-position: right center;
+  }
+  .home-aula .page-content,
+  .home-matricula .page-content,
+  .home-marketing .page-content {
+    background-image: none;
+  }
+  .home-aula .page-content > .container,
+  .home-matricula .page-content > .container,
+  .home-marketing .page-content > .container {
+    background-image: none;
+  }
+  .page-contato > .container,
+  .page-info > .container,
+  .page-aula > .container,
+  .page-matricula > .container,
+  .page-teste-seu-idioma > .container {
+    background-image: none;
   }
   .home-teste .page-content {
     height: 360px;
@@ -1115,11 +1307,31 @@ JQUERY UI END
   .galeria-detalhe .imagem {
     height: 320px;
   }
+  .single-unidade .box-img {
+    display: none;
+  }
+  .box-depoimento {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+  }
+  .box-depoimento .imagem {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+  }
+  .page-filho-metodologia .entry-content ul {
+    width: 100%;
+    margin: 0;
+    float: none;
+  }
 }
 @media (max-width: 480px) {
   .navbar-brand {
-    width: 100%;
+    width: 80%;
     float: none;
+    display: block;
+    height: auto;
   }
   .navbar-brand img {
     max-width: 100%;
@@ -1128,7 +1340,7 @@ JQUERY UI END
   .home-banner .cycle-slideshow,
   .home-banner .cycle-slideshow li,
   .home-banner .cycle-slideshow .content {
-    height: 212px;
+    /*height: 212px;*/
   }
   .home-banner .cycle-prev,
   .home-banner .cycle-next {
@@ -1138,6 +1350,17 @@ JQUERY UI END
   .lista-blog .date {
     font-size: 18px;
     padding-top: 15px;
+    font-size: 13px;
+  }
+  .lista-blog .text {
+    padding: 15px 15px;
+  }
+  .lista-blog .text .title {
+    font-size: 12px;
+  }
+  .lista-blog .imagem {
+    height: 80px;
+    margin: 0;
   }
   .home-teste .page-content {
     height: 250px;
@@ -1150,6 +1373,14 @@ JQUERY UI END
   }
   .lista-fotos .imagem {
     height: 180px;
+  }
+  .home-escolher .page-content {
+    background: #113754 ;
+  }
+  .page-header h1,
+  .page-header h2,
+  .page-header h3 {
+    font-size: 20px;
   }
 }
 @media (max-width: 354px) {
@@ -1164,5 +1395,9 @@ JQUERY UI END
   }
   .lista-fotos .imagem {
     height: 120px;
+  }
+  .box-depoimento {
+    padding: 15px;
+    text-align: center;
   }
 }
