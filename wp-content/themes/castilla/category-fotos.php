@@ -19,8 +19,8 @@ get_header(); ?>
 				<h1 class="archive-title"><?php printf( single_cat_title( '', false ) ); ?></h1>
 			</div>
 		</header><!-- .archive-header -->
-		<div class="box-imagem" style="background-image:url(<?php echo get_template_directory_uri(); ?>/img/fotos.jpg);">
-			<img src="<?php echo get_template_directory_uri(); ?>/img/pixel.gif" class="pixel" alt="">
+		<div class="box-imagem-full" style="background-image:url();">
+			<img src="<?php echo get_template_directory_uri(); ?>/img/fotos.jpg" class="" alt="">
 		</div> <!-- .box-imagem -->
 		<div class="page-header">
 			<div class="container">

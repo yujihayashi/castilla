@@ -32,9 +32,11 @@ while ( have_posts() ) : the_post();
 			</header>
 		</div> <!-- .container -->
 	</div> <!-- .page-header -->
-	<div class="box-imagem" style="background-image:url(<?php echo get_template_directory_uri(); ?>/img/contato.jpg);">
-		<img src="<?php echo get_template_directory_uri(); ?>/img/pixel.gif" class="pixel" alt="">
+	<? if (get_the_post_thumbnail()) { ?>
+	<div class="box-imagem-full" style="">
+		<?php echo get_the_post_thumbnail(); ?>
 	</div> <!-- .box-imagem -->
+	<? } //if (get_the_post_thumbnail( $page )) { ?>
 	<div class="page-header">
 		<div class="container">
 			<header class="entry-header">
@@ -52,35 +54,6 @@ while ( have_posts() ) : the_post();
 						<?php
 						the_content();
 						?>
-						<form action="">
-							<div class="form-group">
-								<label class="sr-only">Nome:</label>
-								<input type="text" class="form-control input-sm" placeholder="Nome:">
-							</div> <!-- .form-group -->
-							<div class="form-group">
-								<label class="sr-only">Telefone:</label>
-								<input type="text" class="form-control input-sm" placeholder="Telefone:">
-							</div> <!-- .form-group -->
-							<div class="form-group">
-								<label class="sr-only">Celular:</label>
-								<input type="text" class="form-control input-sm" placeholder="Celular:">
-							</div> <!-- .form-group -->
-							<div class="form-group">
-								<label class="sr-only">E-mail:</label>
-								<input type="email" class="form-control input-sm" placeholder="E-mail:">
-							</div> <!-- .form-group -->
-							<div class="form-group">
-								<label class="sr-only">Assunto:</label>
-								<input type="text" class="form-control input-sm" placeholder="Assunto:">
-							</div> <!-- .form-group -->
-							<div class="form-group">
-								<label class="sr-only">Mensagem:</label>
-								<textarea class="form-control input-sm" placeholder="Mensagem:" row="6"></textarea>
-							</div> <!-- .form-group -->
-							<p class="text-right">
-								<button class="btn btn-pink btn-sm" type="submit">ENVIAR</button>
-							</p>
-						</form>
 						<?php
 						wp_link_pages( array(
 							'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'twentyfourteen' ) . '</span>',

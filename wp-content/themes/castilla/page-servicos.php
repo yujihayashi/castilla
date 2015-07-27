@@ -31,9 +31,11 @@ while ( have_posts() ) : the_post();
 			</header>
 		</div> <!-- .container -->
 	</div> <!-- .page-header -->
-	<div class="box-imagem" style="background-image:url(<?php echo get_template_directory_uri(); ?>/img/servicos.jpg);">
-		<img src="<?php echo get_template_directory_uri(); ?>/img/pixel.gif" class="pixel" alt="">
+	<? if (get_the_post_thumbnail()) { ?>
+	<div class="box-imagem-full" style="">
+		<?php echo get_the_post_thumbnail(); ?>
 	</div> <!-- .box-imagem -->
+	<? } //if (get_the_post_thumbnail( $page )) { ?>
 	<div class="page-header">
 		<div class="container">
 			<header class="entry-header">
